@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "cd react-client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tahshara",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.3",
+    "pg-promise": "^10.4.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }
