@@ -8,15 +8,17 @@ const pgp = require('pg-promise')();
  * For examples of other queries, see
  * [pghttps://github.com/vitaly-t/pg-promise/wiki/Learn-by-Example
   */
- class BooktonicaDatabase {
+  class BooktonicaDatabase {
    /**
     * @param {String} name - name of database to connect to
     */
    constructor(name) {
-     const connectionString = `postgres://localhost:5432/${name}`;
-     console.log('Postgres DB => ', connectionString);
-     this.db = pgp(connectionString);
-    }
+    //process.env.DATABASE_URL is a postgres instance in amazon cloud this 
+    const connectionString = process.env.DATABASE_URL || `postgres://localhost:5432/${name}`;
+
+    console.log('Postgres DB => ', connectionString);
+    this.db = pgp(connectionString);
+  }
     
     sanityCheck() {
       console.log('\tTesting database connection...');
