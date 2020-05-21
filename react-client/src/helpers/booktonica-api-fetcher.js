@@ -1,7 +1,5 @@
-const apiUrl = process.env.REACT_APP_BOOKTONICA_TB || 'http://localHost3001'; 
-console.log(apiUrl)
 export function getAllBooks() {
-  return fetch(`${apiUrl}/books`, {
+  return fetch("/books", {
     headers: {
       // This header is needed or React app won't proxy it along to Express
       Accept: "application/json"
@@ -11,14 +9,14 @@ export function getAllBooks() {
       return resp.json();
     } else {
       throw new Error(
-        `😩 fetch('${apiUrl}/books') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
+        `😩 fetch('/books') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
       );
     }
   });
 }
 
 export function getBookList(){
-  return fetch(`${apiUrl}/booklists`, {
+  return fetch("/booklists", {
     headers: {
       // This header is needed or React app won't proxy it along to Express
       Accept: "application/json"
@@ -28,14 +26,14 @@ export function getBookList(){
       return resp.json();
     } else {
       throw new Error(
-        `😩 fetch('${apiUrl}/lists') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
+        `😩 fetch('/lists') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
       );
     }
   });
 }
 
 export function getAllBooksInList(){
-  return fetch(`${apiUrl}/lists`, {
+  return fetch("/lists", {
     headers: {
       // This header is needed or React app won't proxy it along to Express
       Accept: "application/json"
@@ -45,14 +43,14 @@ export function getAllBooksInList(){
       return resp.json();
     } else {
       throw new Error(
-        `😩 fetch('${apiUrl}/lists') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
+        `😩 fetch('/lists') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
       );
     }
   });
 }
 
 export function addBookToList(book) {
-  return fetch(`${apiUrl}/booklist_books`, {
+  return fetch("/booklist_books", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -63,7 +61,7 @@ export function addBookToList(book) {
 }
 
 export function getListBooksBelongTo(id){
-  return fetch(`${apiUrl}/listsBookBelongsTo/${id}`, {
+  return fetch(`/listsBookBelongsTo/${id}`, {
     headers: {
       // This header is needed or React app won't proxy it along to Express
       Accept: "application/json"
@@ -73,14 +71,14 @@ export function getListBooksBelongTo(id){
       return resp.json();
     } else {
       throw new Error(
-        `😩 fetch('${apiUrl}/listsBooksBelongTo') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
+        `😩 fetch('/listsBooksBelongTo') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
       );
     }
   });
 }
 
 export function getBooksInList(list_id){
-  return fetch(`${apiUrl}/booksInList/${list_id}`, {
+  return fetch(`/booksInList/${list_id}`, {
     headers: {
       // This header is needed or React app won't proxy it along to Express
       Accept: "application/json"
@@ -90,7 +88,7 @@ export function getBooksInList(list_id){
       return resp.json();
     } else {
       throw new Error(
-        `😩 fetch('${apiUrl}/booksInList') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
+        `😩 fetch('/booksInList') failed: Express server responded with HTTP ${resp.status} ${resp.statusText}. (Note: this error is custom to Booktonica and you cannot Google it). Check your Network console for more information about the request and the Express logs for more information about the response.`
       );
     }
   });
