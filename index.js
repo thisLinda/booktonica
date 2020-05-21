@@ -2,7 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const BooktonicaDatabase = require('./src/booktonica-database');
-const cors = require('cors')
+const cors = require('cors');
+const path = require('path');
+
 
 /**
  * A way to change the defaults.

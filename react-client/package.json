@@ -1,7 +1,6 @@
 {
   "name": "react-client",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -16,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prettier": "prettier --write '**/*.{ts,tsx,json,md,js,jsx}' --config .prettierrc",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -35,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-emotion": "^10.0.33"
   }
 }

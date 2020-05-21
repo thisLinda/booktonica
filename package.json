@@ -1,21 +1,32 @@
 {
   "name": "booktonica",
   "version": "1.0.0",
-  "description": "",
+  "engines": {
+    "node": "13.7.x"
+  },
+  "description": "Booktonica is a full-stack app displaying collection of books from Techtonica's curriculum. Users can view books as well as books from a specfic list.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd react-client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tahshara",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boocheet/booktonica.git"
+  },
+  "author": "Tahshara Boochee",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
     "nodemon": "^2.0.3",
-    "pg-promise": "^10.4.4"
+    "pg-promise": "^10.4.4",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
