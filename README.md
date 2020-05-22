@@ -10,7 +10,7 @@ View Booktonica here: https://booktonica-react.herokuapp.com/
 
 The [Features/Requirements]to let users create curated lists of books was completed in a day. This includes understanding a new codebase, modeling the data, and implementation of the feature.
 
-![viewing-booklists](booktonicaGif.mp4)
+![viewing-booklists](booktonicaGif.gif)
 
 ### stored gif using https://git-lfs.github.com./
 
