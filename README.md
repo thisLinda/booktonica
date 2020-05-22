@@ -12,7 +12,7 @@ The [Features/Requirements]to let users create curated lists of books was comple
 
 ![viewing-booklists](booktonicaGif.gif)
 
-### stored gif using https://git-lfs.github.com./
+<!-- ### stored gif using https://git-lfs.github.com./ -->
 
 
 
