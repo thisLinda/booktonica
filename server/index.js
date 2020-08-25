@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const BooktonicaDatabase = require('./src/booktonica-database');
+const BooktonicaDatabase = require('./src/booktonica_database');
 const cors = require('cors');
 const path = require('path');
 
@@ -23,7 +23,7 @@ const api = express();
 // Middlewares
 api.use(morgan('tiny'));
 api.use(bodyParser.json());
-api.use(cors())
+api.use(cors());
 //serve static files from the React app
 api.use(express.static(path.join(__dirname, 'react-client/build')));
 
@@ -48,7 +48,7 @@ api.get('*', (_, res) => {
 api.get('/books', (_unused, res) =>
   db.getAllBooks().then(books => {
     // console.log(books)
-    res.send(books)
+    res.send(books);
   })
 );
 
@@ -56,15 +56,15 @@ api.get('/books', (_unused, res) =>
 api.get('/lists', (_unused, res) =>
 // console.log('index.js get list request', booksInList)
   db.getAllBooksInList().then((booksInList) => {
-    res.send(booksInList)
+    res.send(booksInList);
   })
 );
 
 // add book to bookList /booklist_books
 api.post('/booklist_books', (req, res) =>
   db.addBookToList(req.body).then(book => {
-    console.log('index.js express server', book)
-    res.send(book)
+    console.log('index.js express server', book);
+    res.send(book);
   })
 );
 
@@ -72,7 +72,7 @@ api.post('/booklist_books', (req, res) =>
 api.get('/listsBookBelongsTo/:id', (req, res) =>
 // console.log('index.js get list request', booksInList)
   db.getListBooksBelongTo(req.params.id).then((bookList) => {
-    res.send(bookList)
+    res.send(bookList);
   })
 );
 
@@ -80,7 +80,7 @@ api.get('/listsBookBelongsTo/:id', (req, res) =>
 api.get('/booksInList/:list_id', (req, res) =>
 // console.log('index.js get list request', booksInList)
   db.getBooksInList(req.params.list_id).then((books) => {
-    res.send(books)
+    res.send(books);
   })
 );
 
@@ -88,7 +88,7 @@ api.get('/booksInList/:list_id', (req, res) =>
 api.get('/booklists', (_unused, res) =>
   db. getBookList().then((booklists) => {
     // console.log('index.js get list request', booklists)
-    res.send(booklists)
+    res.send(booklists);
   })
 );
 
@@ -97,6 +97,6 @@ db.sanityCheck().then(() => {
   let server = api.listen(process.env.PORT || 3001, function(){
     let host = server.address().address;
     let port = server.address().port;
-    console.log(`booktonia is running at http://%s:%s", ${host}, ${port}`);
-  })
+    console.log(`booktonica is running at http://%s:%s", ${host}, ${port}`);
+  });
 });
